@@ -1,0 +1,68 @@
+{
+  "title": "Text Classification",
+  "description": "",
+  "parameters": {
+    "groundingPromptConfig": {
+      "disabled": true,
+      "groundingConfig": {
+        "sources": [
+          {
+            "type": "WEB"
+          }
+        ]
+      }
+    },
+    "stopSequences": [],
+    "temperature": 1,
+    "tokenLimits": 8192,
+    "topP": 0.95
+  },
+  "inputPrefixes": [
+    "Cancer"
+  ],
+  "outputPrefixes": [
+    ""
+  ],
+  "examples": [
+    {
+      "inputs": [
+        "Arthritis"
+      ],
+      "outputs": [
+        "When your joints get swollen and sore"
+      ]
+    },
+    {
+      "inputs": [
+        "Asthma"
+      ],
+      "outputs": [
+        "When your airways get tight, making it hard to breathe "
+      ]
+    },
+    {
+      "inputs": [
+        "Eczema"
+      ],
+      "outputs": [
+        "When your skin gets dry, itchy, and red "
+      ]
+    }
+  ],
+  "testData": [
+    {
+      "inputs": [
+        "Diabetes"
+      ]
+    }
+  ],
+  "type": "freeform",
+  "prompt": {
+    "parts": [
+      {
+        "text": "Classify the text into neutral, negative or positive.\n\nText: I think the hospital staff was ok."
+      }
+    ]
+  },
+  "model": "google/gemini-1.5-pro-001"
+}
